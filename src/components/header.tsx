@@ -26,7 +26,7 @@ export function Header({ navItems }: { navItems: NavItem[] }) {
               <Link
                 key={item.link}
                 href={item.link}
-                className="text-sm font-medium text-muted-foreground transition-colors px-3 py-2 rounded-md hover:text-primary"
+                className="text-sm font-medium text-muted-foreground transition-all duration-300 px-3 py-2 rounded-md hover:text-primary hover:-translate-y-0.5"
               >
                 {item.name}
               </Link>
