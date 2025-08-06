@@ -55,7 +55,7 @@ export const userProfile = {
     "A versatile IT Engineering student passionate about building intelligent, scalable solutions. I have hands-on experience developing full-stack applications with the MERN stack and Next.js, and a strong command of DevOps practices for automating CI/CD pipelines. My skills extend to data engineering, where I build ETL workflows, and I leverage data analysis and machine learning to extract insights. I am also proficient in integrating Generative AI to create innovative, automated, and data-driven user experiences.",
   email: "piyushpatil922004@gmail.com",
   phone: "7057241350",
-  location: "India",
+  location: "Pune, Maharashtra",
 };
 
 export const socialLinks: SocialLink[] = [
@@ -70,18 +70,18 @@ export const socialLinks: SocialLink[] = [
     icon: <IconBrandGithub className="h-full w-full text-neutral-500 dark:text-neutral-300" />,
   },
   {
-    name: "Email",
-    url: "mailto:piyushpatil922004@gmail.com",
+    name: userProfile.email,
+    url: "#",
     icon: <IconMail className="h-full w-full text-neutral-500 dark:text-neutral-300" />,
   },
   {
-    name: "Location",
+    name: userProfile.location,
     url: "#",
     icon: <IconMapPin className="h-full w-full text-neutral-500 dark:text-neutral-300" />,
   },
   {
     name: "Instagram",
-    url: "https://www.instagram.com",
+    url: "https://www.instagram.com/piyuushhh_09",
     icon: <IconBrandInstagram className="h-full w-full text-neutral-500 dark:text-neutral-300" />,
   },
 ];
