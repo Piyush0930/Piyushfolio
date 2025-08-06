@@ -7,10 +7,12 @@ import { Education } from "@/components/education";
 import { Contact } from "@/components/contact";
 import { Footer } from "@/components/footer";
 import { navItems, socialLinks } from "@/lib/data";
+import { BackgroundBeams } from "@/components/ui/background-beams";
 
 export default function Home() {
   return (
     <main className="relative bg-background flex justify-center items-center flex-col overflow-clip mx-auto sm:px-10 px-5">
+      <BackgroundBeams />
       <div className="max-w-7xl w-full">
         <Header navItems={navItems} />
         <Hero />
