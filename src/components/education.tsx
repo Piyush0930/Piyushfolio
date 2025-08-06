@@ -1,7 +1,7 @@
 import React from 'react';
 import { Card, CardHeader, CardTitle, CardDescription, CardContent } from './ui/card';
 import { education } from '@/lib/data';
-import { Briefcase } from 'lucide-react';
+import { GraduationCap } from 'lucide-react';
 
 export const Education = () => {
   return (
@@ -17,9 +17,9 @@ export const Education = () => {
         {education.map((item, index) => (
           <div key={index} className="relative pl-16 mb-12">
             <div className="absolute left-6 top-1 -translate-x-1/2 w-10 h-10 bg-background rounded-full border-4 border-background flex items-center justify-center">
-              <div className="w-4 h-4 bg-primary rounded-full"></div>
+               <div className="w-4 h-4 bg-primary rounded-full"></div>
             </div>
-            <Card>
+            <Card className="bg-card/50 backdrop-blur-sm">
               <CardHeader>
                 <div className="flex items-center justify-between">
                   <div>

@@ -1,11 +1,11 @@
 "use client";
 
 import { socialLinks, userProfile } from "@/lib/data";
-import { cn } from "@/lib/utils";
 import React from "react";
 import { Button } from "./ui/button";
 import { Download, Linkedin, Github } from "lucide-react";
 import Link from "next/link";
+import { Spotlight } from "./ui/spotlight";
 import { TextGenerateEffect } from "./ui/text-generate-effect";
 
 const iconMap: { [key: string]: React.ElementType } = {
@@ -15,15 +15,35 @@ const iconMap: { [key: string]: React.ElementType } = {
 
 export function Hero() {
   return (
-    <section id="home" className="relative min-h-screen flex items-center justify-center">
-      <div className="absolute pointer-events-none inset-0 flex items-center justify-center dark:bg-black bg-white [mask-image:radial-gradient(ellipse_at_center,transparent_20%,black)]"></div>
+    <section id="home" className="pb-20 pt-36">
+      <div>
+        <Spotlight
+          className="-top-40 -left-10 md:-left-32 md:-top-20 h-screen"
+          fill="white"
+        />
+        <Spotlight
+          className="top-10 left-full h-[80vh] w-[50vw]"
+          fill="purple"
+        />
+        <Spotlight className="top-28 left-80 h-[80vh] w-[50vw]" fill="blue" />
+      </div>
+
+      <div className="h-screen w-full dark:bg-black-100 bg-white dark:bg-grid-white/[0.03] bg-grid-black/[0.2] absolute top-0 left-0 flex items-center justify-center">
+        <div className="absolute pointer-events-none inset-0 flex items-center justify-center dark:bg-black bg-white [mask-image:radial-gradient(ellipse_at_center,transparent_20%,black)]" />
+      </div>
       
-      <div className="relative z-10 text-center px-4">
-        <h1 className="text-5xl md:text-7xl font-bold font-headline bg-clip-text text-transparent bg-gradient-to-b from-neutral-50 to-neutral-400">
-          {userProfile.name}
-        </h1>
-        
-        <TextGenerateEffect words={userProfile.title} className="mt-4 text-accent" />
+      <div className="relative z-10 text-center my-20">
+        <div className="max-w-[89vw] md:max-w-2xl lg:max-w-[60vw] flex flex-col items-center justify-center mx-auto">
+          <h2 className="uppercase tracking-widest text-xs text-center text-blue-100 max-w-80">
+            Dynamic Web Magic with Next.js
+          </h2>
+
+          <TextGenerateEffect words={userProfile.name} className="text-center text-[40px] md:text-5xl lg:text-6xl" />
+
+          <p className="text-center md:tracking-wider mb-4 text-sm md:text-lg lg:text-2xl">
+            {userProfile.title}
+          </p>
+        </div>
 
         <div className="mt-8 max-w-3xl mx-auto">
           <p className="text-muted-foreground leading-relaxed">
@@ -35,14 +55,11 @@ export function Hero() {
           <a
             href="/Piyush_Patil_Resume.pdf"
             download
-            className={cn(
-              "inline-flex h-10 items-center justify-center gap-2 whitespace-nowrap rounded-md text-sm font-medium ring-offset-background transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 disabled:pointer-events-none disabled:opacity-50",
-              "bg-primary text-primary-foreground hover:bg-primary/90",
-              "px-4 py-2"
-            )}
           >
-            <Download className="h-4 w-4" />
-            Download Resume
+            <Button>
+              <Download className="mr-2 h-4 w-4" />
+              Download Resume
+            </Button>
           </a>
           {socialLinks.map((social) => {
             const Icon = iconMap[social.icon as string];

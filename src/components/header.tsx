@@ -1,4 +1,3 @@
-
 "use client";
 
 import React from "react";
@@ -13,15 +12,14 @@ export function Header({ navItems }: { navItems: NavItem[] }) {
   return (
     <header className="sticky top-0 z-50 w-full border-b border-border/40 bg-background/95 backdrop-blur supports-[backdrop-filter]:bg-background/60">
       <div className="container flex h-14 max-w-screen-2xl items-center">
-        <div className="flex items-center flex-1">
-          <Link href="/" className="mr-6 flex items-center space-x-2 ml-2">
+        <div className="mr-4 hidden md:flex">
+          <Link href="/" className="mr-6 flex items-center space-x-2">
             <Code className="h-6 w-6" />
-            <span className="font-bold">Piyush Patil</span>
+            <span className="hidden font-bold sm:inline-block">
+              Piyush Patil
+            </span>
           </Link>
-        </div>
-
-        <nav className="hidden md:flex items-center justify-center flex-1">
-          <div className="flex items-center space-x-1">
+          <nav className="flex items-center space-x-1">
             {navItems.map((item) => (
               <Link
                 key={item.link}
@@ -31,10 +29,13 @@ export function Header({ navItems }: { navItems: NavItem[] }) {
                 {item.name}
               </Link>
             ))}
-          </div>
-        </nav>
+          </nav>
+        </div>
 
-        <div className="flex flex-1 items-center justify-end space-x-2">
+        <div className="flex flex-1 items-center justify-between space-x-2 md:justify-end">
+          <div className="w-full flex-1 md:w-auto md:flex-none">
+            {/* Search, could be added later */}
+          </div>
           <ThemeToggle />
           <Sheet>
             <SheetTrigger asChild>

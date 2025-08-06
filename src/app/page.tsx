@@ -10,18 +10,16 @@ import { navItems, socialLinks } from "@/lib/data";
 
 export default function Home() {
   return (
-    <main className="relative flex justify-center items-center flex-col overflow-clip mx-auto">
-      <div className="w-full">
+    <main className="relative bg-background flex justify-center items-center flex-col overflow-clip mx-auto sm:px-10 px-5">
+      <div className="max-w-7xl w-full">
         <Header navItems={navItems} />
         <Hero />
-        <div className="px-5 sm:px-10">
-          <Skills />
-          <Projects />
-          <Experience />
-          <Education />
-          <Contact />
-          <Footer socialLinks={socialLinks} />
-        </div>
+        <Skills />
+        <Projects />
+        <Experience />
+        <Education />
+        <Contact />
+        <Footer socialLinks={socialLinks} />
       </div>
     </main>
   );
