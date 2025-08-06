@@ -96,12 +96,12 @@ export function ExpandableCardList({ items }: { items: CardData[] }) {
                     <div className="flex gap-2">
                         {'github' in active && active.github && (
                             <Link href={active.github} target="_blank">
-                                <Button size="icon" variant="outline"><Github/></Button>
+                                <Button size="icon" variant="outline"><Github className="h-4 w-4 mr-2"/> GitHub</Button>
                             </Link>
                         )}
                         {'demo' in active && active.demo && (
                             <Link href={active.demo} target="_blank">
-                                <Button size="icon"><ExternalLink/></Button>
+                                <Button size="icon"><ExternalLink className="h-4 w-4 mr-2" /> Demo</Button>
                             </Link>
                         )}
                     </div>
