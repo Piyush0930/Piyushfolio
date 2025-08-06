@@ -1,15 +1,3 @@
-import {
-  Code,
-  Laptop,
-  Database,
-  Cloud,
-  BarChart2,
-  Cpu,
-  Bot,
-  Wrench,
-  Linkedin,
-  Github
-} from "lucide-react";
 import type { LucideIcon } from "lucide-react";
 
 export type Project = {
@@ -25,7 +13,7 @@ export type Project = {
 export type SkillCategory = {
   category: string;
   technologies: string[];
-  icon: React.ReactElement;
+  icon: LucideIcon;
 };
 
 export type Experience = {
@@ -63,8 +51,8 @@ export const userProfile = {
 };
 
 export const socialLinks: SocialLink[] = [
-  { name: "LinkedIn", url: "https://www.linkedin.com/in/piyush-patil-867a30250", icon: Linkedin },
-  { name: "GitHub", url: "https://github.com/Piyush0930", icon: Github },
+  { name: "LinkedIn", url: "https://www.linkedin.com/in/piyush-patil-867a30250", icon: "Linkedin" as any },
+  { name: "GitHub", url: "https://github.com/Piyush0930", icon: "Github" as any },
 ];
 
 export const navItems: NavItem[] = [
@@ -75,46 +63,46 @@ export const navItems: NavItem[] = [
   { name: "Contact", link: "#contact" },
 ];
 
-export const skills: SkillCategory[] = [
+export const skills: Omit<SkillCategory, 'icon'> & { icon: string }[] = [
   {
     category: "Languages",
     technologies: ["JavaScript (ES6+)", "Python", "Java", "SQL"],
-    icon: <Code />,
+    icon: "Code",
   },
   {
     category: "Frontend",
     technologies: ["React.js", "Next.js", "Redux", "Tailwind CSS", "HTML5", "CSS3"],
-    icon: <Laptop />,
+    icon: "Laptop",
   },
   {
     category: "Backend",
     technologies: ["Node.js", "Express.js", "RESTful APIs", "JWT Authentication", "Firebase"],
-    icon: <Cpu />,
+    icon: "Cpu",
   },
   {
     category: "Databases",
     technologies: ["MongoDB", "MongoDB Atlas", "MySQL", "Mongoose", "Firebase Firestore", "Azure SQL Database"],
-    icon: <Database />,
+    icon: "Database",
   },
   {
     category: "DevOps & Cloud",
     technologies: ["Git", "GitHub", "Docker", "Jenkins", "Kubernetes", "Ansible", "Terraform", "AWS", "Microsoft Azure"],
-    icon: <Cloud />,
+    icon: "Cloud",
   },
   {
     category: "Big Data & ETL",
     technologies: ["Apache Spark", "PySpark", "Azure Data Factory", "Azure Synapse Analytics", "Azure Databricks"],
-    icon: <BarChart2 />,
+    icon: "BarChart2",
   },
   {
     category: "GenAI & Automation",
     technologies: ["AI API Integration", "OpenAI", "LangChain", "Chatbots", "Content Generation"],
-    icon: <Bot />,
+    icon: "Bot",
   },
   {
     category: "Other Tools",
     technologies: ["Postman", "VS Code", "APIs", "Web Scraping"],
-    icon: <Wrench />,
+    icon: "Wrench",
   },
 ];
 

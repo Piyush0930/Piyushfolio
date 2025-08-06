@@ -16,6 +16,11 @@ import { Sparkles, Download, Linkedin, Github } from "lucide-react";
 import Link from "next/link";
 import { TextGenerateEffect } from "./ui/text-generate-effect";
 
+const iconMap: { [key: string]: React.ElementType } = {
+  Linkedin,
+  Github,
+};
+
 export function Hero() {
   const [tone, setTone] = useState("Professional");
   const [personalizedBio, setPersonalizedBio] = useState(userProfile.intro);
@@ -81,14 +86,17 @@ export function Hero() {
             <Download className="h-4 w-4" />
             Download Resume
           </a>
-          {socialLinks.map(social => (
-            <Link key={social.name} href={social.url} target="_blank" rel="noopener noreferrer">
-              <Button variant="outline" size="icon">
-                <social.icon className="h-5 w-5" />
-                <span className="sr-only">{social.name}</span>
-              </Button>
-            </Link>
-          ))}
+          {socialLinks.map((social) => {
+            const Icon = iconMap[social.icon as string];
+            return Icon ? (
+              <Link key={social.name} href={social.url} target="_blank" rel="noopener noreferrer">
+                <Button variant="outline" size="icon">
+                  <Icon className="h-5 w-5" />
+                  <span className="sr-only">{social.name}</span>
+                </Button>
+              </Link>
+            ) : null
+          })}
         </div>
       </div>
     </section>

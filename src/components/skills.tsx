@@ -1,6 +1,27 @@
 import React from 'react';
 import { skills } from '@/lib/data';
 import { BentoGrid, BentoGridItem } from './ui/bento-grid';
+import {
+  Code,
+  Laptop,
+  Database,
+  Cloud,
+  BarChart2,
+  Cpu,
+  Bot,
+  Wrench,
+} from "lucide-react";
+
+const iconMap: { [key: string]: React.ReactElement } = {
+  Code: <Code />,
+  Laptop: <Laptop />,
+  Database: <Database />,
+  Cloud: <Cloud />,
+  BarChart2: <BarChart2 />,
+  Cpu: <Cpu />,
+  Bot: <Bot />,
+  Wrench: <Wrench />,
+};
 
 export function Skills() {
   return (
@@ -25,7 +46,7 @@ export function Skills() {
                 ))}
               </div>
             }
-            icon={item.icon}
+            icon={iconMap[item.icon]}
             className={i === 3 || i === 6 ? "md:col-span-2" : ""}
           />
         ))}

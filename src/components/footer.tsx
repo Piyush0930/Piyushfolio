@@ -2,8 +2,14 @@ import React from "react";
 import { Button } from "./ui/button";
 import Link from "next/link";
 import type { SocialLink } from "@/lib/data";
+import { Linkedin, Github } from "lucide-react";
 
-export function Footer({ socialLinks }: { socialLinks: SocialLink[] }) {
+const iconMap: { [key: string]: React.ElementType } = {
+  Linkedin,
+  Github,
+};
+
+export function Footer({ socialLinks }: { socialLinks: Omit<SocialLink, 'icon'> & { icon: string }[] }) {
   return (
     <footer className="w-full pt-20 pb-10" id="contact">
       <div className="w-full absolute left-0 -bottom-72 min-h-96">
@@ -32,18 +38,21 @@ export function Footer({ socialLinks }: { socialLinks: SocialLink[] }) {
         </p>
 
         <div className="flex items-center md:gap-3 gap-6">
-          {socialLinks.map((profile) => (
-            <Link
-              key={profile.name}
-              href={profile.url}
-              target="_blank"
-              rel="noopener noreferrer"
-            >
-              <Button variant="ghost" size="icon">
-                <profile.icon className="h-5 w-5" />
-              </Button>
-            </Link>
-          ))}
+          {socialLinks.map((profile) => {
+            const Icon = iconMap[profile.icon as string];
+            return Icon ? (
+              <Link
+                key={profile.name}
+                href={profile.url}
+                target="_blank"
+                rel="noopener noreferrer"
+              >
+                <Button variant="ghost" size="icon">
+                  <Icon className="h-5 w-5" />
+                </Button>
+              </Link>
+            ) : null;
+          })}
         </div>
       </div>
     </footer>
