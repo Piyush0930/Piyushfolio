@@ -9,7 +9,6 @@ import Link from "next/link";
 import { ExternalLink, Github } from "lucide-react";
 
 type CardData = (Project | Experience | Education) & {
-    src: string;
     content: React.ReactNode;
 };
 
@@ -78,16 +77,6 @@ export function ExpandableCardList({ items }: { items: CardData[] }) {
               ref={ref}
               className="w-full max-w-[600px] h-full md:h-fit md:max-h-[90%] flex flex-col bg-card sm:rounded-3xl overflow-hidden"
             >
-              <motion.div layoutId={`image-${'title' in active ? active.title : active.degree}-${id}`}>
-                <img
-                  width={200}
-                  height={200}
-                  src={active.src}
-                  alt={'title' in active ? active.title : active.degree}
-                  className="w-full h-80 lg:h-80 sm:rounded-tr-lg sm:rounded-tl-lg object-cover"
-                />
-              </motion.div>
-
               <div>
                 <div className="flex justify-between items-start p-4">
                   <div className="">
@@ -145,15 +134,6 @@ export function ExpandableCardList({ items }: { items: CardData[] }) {
                     onClick={() => setActive(card)}
                     className="p-4 flex flex-col items-center text-center bg-card hover:bg-card/90 rounded-xl cursor-pointer"
                 >
-                    <motion.div layoutId={`image-${cardTitle}-${id}`}>
-                        <img
-                        width={100}
-                        height={100}
-                        src={card.src}
-                        alt={cardTitle}
-                        className="h-24 w-24 rounded-lg object-cover"
-                        />
-                    </motion.div>
                     <div className="mt-4">
                         <motion.h3
                         layoutId={`title-${cardTitle}-${id}`}
