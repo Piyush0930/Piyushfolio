@@ -11,13 +11,16 @@ export function Header({ navItems }: { navItems: NavItem[] }) {
   return (
     <header className="sticky top-0 z-50 w-full border-b border-border/40 bg-background/95 backdrop-blur supports-[backdrop-filter]:bg-background/60">
       <div className="container flex h-14 max-w-screen-2xl items-center">
-        <div className="mr-4 hidden md:flex">
+        <div className="flex-1 flex items-center">
           <Link href="/" className="mr-6 flex items-center space-x-2">
             <Code className="h-6 w-6" />
             <span className="hidden font-bold sm:inline-block">
               Piyush
             </span>
           </Link>
+        </div>
+
+        <div className="hidden md:flex flex-1 justify-center">
           <nav className="flex items-center space-x-1">
             {navItems.map((item) => (
               <Link
@@ -31,10 +34,7 @@ export function Header({ navItems }: { navItems: NavItem[] }) {
           </nav>
         </div>
 
-        <div className="flex flex-1 items-center justify-between space-x-2 md:justify-end">
-          <div className="w-full flex-1 md:w-auto md:flex-none">
-            {/* Search, could be added later */}
-          </div>
+        <div className="flex flex-1 items-center justify-end space-x-2">
           <Sheet>
             <SheetTrigger asChild>
               <Button variant="ghost" size="icon" className="md:hidden">
@@ -44,6 +44,12 @@ export function Header({ navItems }: { navItems: NavItem[] }) {
             </SheetTrigger>
             <SheetContent side="right">
               <div className="grid gap-2 py-6">
+                <Link href="/" className="flex items-center space-x-2 px-3 py-2">
+                  <Code className="h-6 w-6" />
+                  <span className="font-bold">
+                    Piyush
+                  </span>
+                </Link>
                 {navItems.map((item) => (
                   <Link
                     key={item.link}
