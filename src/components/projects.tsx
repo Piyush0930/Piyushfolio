@@ -23,7 +23,7 @@ export const Projects = () => {
             tech={project.tech}
             github={project.github}
             demo={project.demo}
-            className={i === 3 || i === 6 ? "md:col-span-2" : ""}
+            className=""
           />
         ))}
       </BentoGrid>
