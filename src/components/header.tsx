@@ -15,7 +15,7 @@ export function Header({ navItems }: { navItems: NavItem[] }) {
           <Link href="/" className="mr-6 flex items-center space-x-2">
             <Code className="h-6 w-6" />
             <span className="hidden font-bold sm:inline-block">
-              Piyush Patil
+              Piyush
             </span>
           </Link>
           <nav className="flex items-center space-x-1">
