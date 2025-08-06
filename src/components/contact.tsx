@@ -1,6 +1,6 @@
 "use client";
 
-import React, { useEffect, useRef, useActionState } from "react";
+import React, { useEffect, useRef, useState, useTransition } from "react";
 import { useFormStatus } from "react-dom";
 import { saveMessage } from "@/app/actions";
 import { Button } from "./ui/button";
@@ -35,9 +35,17 @@ const iconMap: { [key: string]: React.ElementType } = {
 };
 
 export function Contact() {
-  const [state, formAction] = useActionState(saveMessage, initialState);
+  const [state, setState] = useState(initialState);
+  const [isPending, startTransition] = useTransition();
   const { toast } = useToast();
   const formRef = useRef<HTMLFormElement>(null);
+
+  const handleSubmit = (formData: FormData) => {
+    startTransition(async () => {
+      const result = await saveMessage(null, formData);
+      setState(result);
+    });
+  };
 
   useEffect(() => {
     if (state.message) {
@@ -48,13 +56,14 @@ export function Contact() {
       });
       if (state.success) {
         formRef.current?.reset();
+        setState(initialState);
       }
     }
   }, [state, toast]);
 
   return (
-    <section id="contact" className="py-16 lg:py-24 relative z-20">
-      <div className="text-center mb-10">
+    <section id="contact" className="py-8 relative z-20">
+      <div className="text-center mb-8">
         <h2 className="text-4xl lg:text-5xl font-bold font-headline">Get In Touch</h2>
         <p className="text-muted-foreground mt-4 max-w-2xl mx-auto">
           Have a question or want to work together? Feel free to reach out.
@@ -102,7 +111,7 @@ export function Contact() {
           </Card>
         </div>
         <div>
-          <form ref={formRef} action={formAction} className="space-y-6">
+          <form ref={formRef} action={handleSubmit} className="space-y-6">
             <div className="space-y-2">
               <Label htmlFor="name">Name</Label>
               <Input id="name" name="name" placeholder="Your Name" required />
