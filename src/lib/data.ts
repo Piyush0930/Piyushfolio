@@ -63,6 +63,7 @@ export const navItems: NavItem[] = [
   { name: "Experience", link: "#experience" },
   { name: "Education", link: "#education" },
   { name: "Contact", link: "#contact" },
+  { name: "Footer", link: "#footer"},
 ];
 
 export const skills: SkillCategory[] = [

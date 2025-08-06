@@ -11,17 +11,11 @@ const iconMap: { [key: string]: React.ElementType } = {
 
 export function Footer({ socialLinks }: { socialLinks: Omit<SocialLink, 'icon'> & { icon: string }[] }) {
   return (
-    <footer className="w-full pt-20 pb-10" id="contact">
+    <footer className="w-full pt-20 pb-10" id="footer">
       <div className="flex flex-col items-center">
         <h1 className="font-headline text-4xl lg:text-5xl font-bold text-center max-w-2xl">
-          Ready to build something <span className="text-accent">amazing</span>?
+          Ready to build something with me <span className="text-accent">amazing</span>??
         </h1>
-        <p className="text-muted-foreground mt-5 my-10 text-center">
-          Reach out to me today and let&apos;s discuss how I can help you achieve your goals.
-        </p>
-        <a href="mailto:piyushpatil922004@gmail.com">
-          <Button>Get in Touch</Button>
-        </a>
       </div>
       <div className="flex mt-16 md:flex-row flex-col justify-between items-center">
         <p className="md:text-base text-sm md:font-normal font-light text-muted-foreground">
