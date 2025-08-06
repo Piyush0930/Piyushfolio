@@ -3,6 +3,7 @@ import { Hero } from "@/components/hero";
 import { Skills } from "@/components/skills";
 import { Projects } from "@/components/projects";
 import { Experience } from "@/components/experience";
+import { Education } from "@/components/education";
 import { Contact } from "@/components/contact";
 import { Footer } from "@/components/footer";
 import { navItems, socialLinks } from "@/lib/data";
@@ -17,6 +18,7 @@ export default function Home() {
           <Skills />
           <Projects />
           <Experience />
+          <Education />
           <Contact />
           <Footer socialLinks={socialLinks} />
         </div>

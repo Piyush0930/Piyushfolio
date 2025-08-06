@@ -1,33 +1,42 @@
 import React from 'react';
 import { Card, CardHeader, CardTitle, CardDescription, CardContent } from './ui/card';
 import { education } from '@/lib/data';
+import { Briefcase } from 'lucide-react';
 
 export const Education = () => {
   return (
     <section id="education" className="py-20 lg:py-32">
       <div className="text-center mb-12">
-        <h2 className="text-4xl lg:text-5xl font-bold font-headline">Education</h2>
-        <p className="text-muted-foreground mt-4">My academic journey.</p>
+        <h2 className="text-4xl lg:text-5xl font-bold font-headline">My Education</h2>
+        <p className="text-muted-foreground mt-4 max-w-2xl mx-auto">
+          My academic journey and milestones.
+        </p>
       </div>
       <div className="relative max-w-4xl mx-auto">
-        <div className="absolute left-1/2 -translate-x-1/2 h-full w-0.5 bg-border"></div>
-        <div className="space-y-12">
-          {education.map((item, index) => (
-            <div key={item.degree} className="relative">
-              <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-4 h-4 rounded-full bg-primary border-4 border-background"></div>
-              <Card className={`w-[calc(50%-2rem)] ${index % 2 === 0 ? 'mr-auto' : 'ml-auto'}`}>
-                <CardHeader>
-                  <CardTitle className="font-headline text-xl">{item.degree}</CardTitle>
-                  <CardDescription>{item.institution}</CardDescription>
-                </CardHeader>
-                <CardContent>
-                  <p className="text-sm text-muted-foreground">{item.period}</p>
-                  <p className="mt-2">{item.details}</p>
-                </CardContent>
-              </Card>
+        <div className="absolute left-6 top-0 w-0.5 h-full bg-border -translate-x-1/2"></div>
+        {education.map((item, index) => (
+          <div key={index} className="relative pl-16 mb-12">
+            <div className="absolute left-6 top-1 -translate-x-1/2 w-10 h-10 bg-background rounded-full border-4 border-background flex items-center justify-center">
+              <div className="w-4 h-4 bg-primary rounded-full"></div>
             </div>
-          ))}
-        </div>
+            <Card>
+              <CardHeader>
+                <div className="flex items-center justify-between">
+                  <div>
+                    <CardTitle className="font-headline text-xl">{item.degree}</CardTitle>
+                    <CardDescription>{item.institution}</CardDescription>
+                  </div>
+                  <div className="text-sm text-muted-foreground text-right">
+                    {item.period}
+                  </div>
+                </div>
+              </CardHeader>
+              <CardContent>
+                <p className="text-muted-foreground">{item.details}</p>
+              </CardContent>
+            </Card>
+          </div>
+        ))}
       </div>
     </section>
   );
