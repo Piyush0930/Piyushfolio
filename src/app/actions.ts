@@ -53,7 +53,7 @@ export async function saveMessage(prevState: any, formData: FormData) {
 
     return {
       success: true,
-      message: "Thank you for your message! I'll get back to you soon.",
+      message: "Message sent successfully!",
     };
   } catch (e) {
     console.error("Error adding document or sending email: ", e);
