@@ -13,7 +13,7 @@ export type Project = {
 export type SkillCategory = {
   category: string;
   technologies: string[];
-  icon: LucideIcon;
+  icon: string;
 };
 
 export type Experience = {
@@ -38,12 +38,12 @@ export type NavItem = {
 export type SocialLink = {
   name: string;
   url: string;
-  icon: LucideIcon;
+  icon: string;
 };
 
 export const userProfile = {
   name: "Piyush Patil",
-  title: "Full Stack Developer | Data Engineer | DevOps Enthusiast | GenAI Integrator",
+  title: "MERN STACK(NEXTJS) | DEVOPS | DATA ENGINEER | DATA ANALYSIS | GENAI | MACHINE LEARNING",
   intro: "I’m an IT Engineering student skilled in building modern web applications, CI/CD pipelines, cloud-native deployments, and scalable data engineering workflows. I specialize in MERN stack, DevOps tools, and Azure-based ETL solutions, with experience in integrating Generative AI for enhanced automation and user experiences.",
   email: "piyushpatil922004@gmail.com",
   phone: "7057241350",
@@ -51,8 +51,8 @@ export const userProfile = {
 };
 
 export const socialLinks: SocialLink[] = [
-  { name: "LinkedIn", url: "https://www.linkedin.com/in/piyush-patil-867a30250", icon: "Linkedin" as any },
-  { name: "GitHub", url: "https://github.com/Piyush0930", icon: "Github" as any },
+  { name: "LinkedIn", url: "https://www.linkedin.com/in/piyush-patil-867a30250", icon: "Linkedin" },
+  { name: "GitHub", url: "https://github.com/Piyush0930", icon: "Github" },
 ];
 
 export const navItems: NavItem[] = [
@@ -63,7 +63,7 @@ export const navItems: NavItem[] = [
   { name: "Contact", link: "#contact" },
 ];
 
-export const skills: Omit<SkillCategory, 'icon'> & { icon: string }[] = [
+export const skills: SkillCategory[] = [
   {
     category: "Languages",
     technologies: ["JavaScript (ES6+)", "Python", "Java", "SQL"],
