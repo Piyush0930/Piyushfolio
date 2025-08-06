@@ -21,12 +21,12 @@ export function Header({ navItems }: { navItems: NavItem[] }) {
         </div>
 
         <nav className="hidden md:flex items-center justify-center flex-1">
-          <div className="flex items-center space-x-4 lg:space-x-6">
+          <div className="flex items-center space-x-1">
             {navItems.map((item) => (
               <Link
                 key={item.link}
                 href={item.link}
-                className="text-sm font-medium text-muted-foreground transition-colors hover:text-primary"
+                className="text-sm font-medium text-muted-foreground transition-colors px-3 py-2 rounded-md hover:bg-accent hover:text-accent-foreground"
               >
                 {item.name}
               </Link>
@@ -44,12 +44,12 @@ export function Header({ navItems }: { navItems: NavItem[] }) {
               </Button>
             </SheetTrigger>
             <SheetContent side="right">
-              <div className="grid gap-4 py-6">
+              <div className="grid gap-2 py-6">
                 {navItems.map((item) => (
                   <Link
                     key={item.link}
                     href={item.link}
-                    className="flex w-full items-center py-2 text-lg font-semibold transition-colors hover:text-primary"
+                    className="flex w-full items-center py-2 px-3 rounded-md text-lg font-semibold transition-colors hover:bg-accent hover:text-accent-foreground"
                   >
                     {item.name}
                   </Link>
