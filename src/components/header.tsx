@@ -5,7 +5,6 @@ import Link from "next/link";
 import { Button } from "./ui/button";
 import { Sheet, SheetContent, SheetTrigger } from "./ui/sheet";
 import { Menu, Code } from "lucide-react";
-import { ThemeToggle } from "./theme-toggle";
 import type { NavItem } from "@/lib/data";
 
 export function Header({ navItems }: { navItems: NavItem[] }) {
@@ -36,7 +35,6 @@ export function Header({ navItems }: { navItems: NavItem[] }) {
           <div className="w-full flex-1 md:w-auto md:flex-none">
             {/* Search, could be added later */}
           </div>
-          <ThemeToggle />
           <Sheet>
             <SheetTrigger asChild>
               <Button variant="ghost" size="icon" className="md:hidden">
