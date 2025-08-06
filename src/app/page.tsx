@@ -9,7 +9,7 @@ import { navItems, socialLinks } from "@/lib/data";
 
 export default function Home() {
   return (
-    <main className="relative bg-background flex justify-center items-center flex-col overflow-clip mx-auto">
+    <main className="relative flex justify-center items-center flex-col overflow-clip mx-auto">
       <div className="w-full">
         <Header navItems={navItems} />
         <Hero />
