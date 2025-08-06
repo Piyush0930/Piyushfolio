@@ -10,7 +10,7 @@ export const Projects = () => {
           My <span className="text-accent">Projects</span>
         </h2>
         <p className="mx-auto mt-4 max-w-2xl text-muted-foreground">
-          Here are some of the projects I&apos;ve worked on, showcasing my
+          Here are some of the projects I've worked on, showcasing my
           skills and passion for development.
         </p>
       </div>
