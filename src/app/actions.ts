@@ -3,6 +3,10 @@
 import { z } from "zod";
 import { db } from "@/lib/firebase";
 import { collection, addDoc, serverTimestamp } from "firebase/firestore";
+import { Resend } from "resend";
+import { userProfile } from "@/lib/data";
+
+const resend = new Resend(process.env.RESEND_API_KEY);
 
 const contactSchema = z.object({
   name: z.string().min(2, "Name must be at least 2 characters."),
@@ -28,18 +32,31 @@ export async function saveMessage(prevState: any, formData: FormData) {
   const { name, email, message } = validatedFields.data;
 
   try {
-    const docRef = await addDoc(collection(db, "messages"), {
+    // Save to Firestore
+    await addDoc(collection(db, "messages"), {
       name,
       email,
       message,
       timestamp: serverTimestamp(),
     });
+
+    // Send email via Resend
+    if (process.env.RESEND_API_KEY) {
+      await resend.emails.send({
+        from: 'onboarding@resend.dev',
+        to: userProfile.email,
+        subject: `New message from ${name} on your portfolio`,
+        html: `<p>You have a new message from <strong>${name}</strong> (${email}):</p>
+               <p>${message}</p>`,
+      });
+    }
+
     return {
       success: true,
       message: "Thank you for your message! I'll get back to you soon.",
     };
   } catch (e) {
-    console.error("Error adding document: ", e);
+    console.error("Error adding document or sending email: ", e);
     return {
       success: false,
       message: "Something went wrong. Please try again later.",
