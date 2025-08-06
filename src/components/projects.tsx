@@ -4,7 +4,7 @@ import { BentoGrid, BentoGridItem } from "./ui/bento-grid";
 
 export const Projects = () => {
   return (
-    <section id="projects" className="py-16 lg:py-24">
+    <section id="projects" className="py-20">
       <div className="mb-10 text-center">
         <h2 className="font-headline text-4xl font-bold lg:text-5xl">
           My <span className="text-accent">Projects</span>

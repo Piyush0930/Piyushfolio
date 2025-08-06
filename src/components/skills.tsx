@@ -44,7 +44,7 @@ export function Skills() {
   }));
 
   return (
-    <section id="skills" className="py-8">
+    <section id="skills" className="py-20">
        <div className="text-center mb-8">
         <h2 className="text-4xl lg:text-5xl font-bold font-headline">My <span className="text-accent">Skills</span></h2>
         <p className="text-muted-foreground mt-4 max-w-2xl mx-auto">
