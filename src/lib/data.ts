@@ -4,8 +4,6 @@ export type Project = {
   title: string;
   tech: string[];
   description: string;
-  image: string;
-  aiHint: string;
   github?: string;
   demo?: string;
   link?: string;
@@ -114,8 +112,6 @@ export const projects: Project[] = [
     title: "Smart Property Rental Platform",
     tech: ["MERN", "Tailwind CSS", "Jenkins", "Docker", "Kubernetes", "AWS", "Azure", "Power BI"],
     description: "Airbnb-like platform for property listing, booking, price prediction, CI/CD pipeline, and analytics dashboards.",
-    image: "https://placehold.co/600x400.png",
-    aiHint: "modern apartment interior",
     github: "https://github.com/Piyush0930",
     demo: "#",
   },
@@ -123,8 +119,6 @@ export const projects: Project[] = [
     title: "Hybrid Movie Booking System",
     tech: ["Next.js", "MongoDB"],
     description: "Online/offline mini-theater booking system with authentication and seat reservation.",
-    image: "https://placehold.co/600x400.png",
-    aiHint: "movie theater screen",
     github: "https://github.com/Piyush0930",
     demo: "#",
   },
@@ -132,8 +126,6 @@ export const projects: Project[] = [
     title: "Personal Blog Website",
     tech: ["Next.js 14", "MongoDB", "NextAuth"],
     description: "Full dashboard to create, edit, and publish blogs.",
-    image: "https://placehold.co/600x400.png",
-    aiHint: "minimalist writing desk",
     github: "https://github.com/Piyush0930",
     demo: "#",
   },
@@ -141,8 +133,6 @@ export const projects: Project[] = [
     title: "Social Travel Journey Platform",
     tech: ["MERN"],
     description: "Post travel updates step-by-step with live route tracking.",
-    image: "https://placehold.co/600x400.png",
-    aiHint: "world map travel",
     github: "https://github.com/Piyush0930",
     demo: "#",
   },
@@ -150,8 +140,6 @@ export const projects: Project[] = [
     title: "DevOps Automation Project",
     tech: ["Terraform", "Ansible", "Jenkins", "Docker", "Kubernetes", "AWS"],
     description: "Automated deployment pipeline for cloud infrastructure.",
-    image: "https://placehold.co/600x400.png",
-    aiHint: "server room abstract",
     github: "https://github.com/Piyush0930",
     demo: "#",
   },
@@ -159,8 +147,6 @@ export const projects: Project[] = [
     title: "Data Engineering Pipeline",
     tech: ["Azure ADF", "Databricks", "Synapse", "Power BI"],
     description: "End-to-end ETL process with reporting dashboards.",
-    image: "https://placehold.co/600x400.png",
-    aiHint: "data pipeline visualization",
     github: "https://github.com/Piyush0930",
     demo: "#",
   },

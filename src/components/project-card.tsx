@@ -1,5 +1,4 @@
 import React from "react";
-import Image from "next/image";
 import Link from "next/link";
 import { Card, CardContent, CardHeader, CardTitle } from "./ui/card";
 import { Badge } from "./ui/badge";
@@ -17,16 +16,6 @@ export const ProjectCard = ({
 }) => {
   return (
     <Card className={cn("flex flex-col overflow-hidden h-full group", className)}>
-      <div className="relative w-full h-48 overflow-hidden">
-        <Image
-          src={project.image}
-          alt={project.title}
-          fill
-          className="object-cover transition-transform duration-500 group-hover:scale-105"
-          data-ai-hint={project.aiHint}
-        />
-        <div className="absolute inset-0 bg-black/30 group-hover:bg-black/50 transition-colors duration-300" />
-      </div>
       <CardHeader>
         <CardTitle className="font-headline text-xl">{project.title}</CardTitle>
       </CardHeader>
