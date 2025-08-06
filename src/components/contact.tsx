@@ -8,7 +8,7 @@ import { Input } from "./ui/input";
 import { Textarea } from "./ui/textarea";
 import { Label } from "./ui/label";
 import { useToast } from "@/hooks/use-toast";
-import { MoveUpRight, Mail, Phone, MapPin } from "lucide-react";
+import { MoveUpRight, Mail, Phone, MapPin, Linkedin, Github } from "lucide-react";
 import { Card, CardContent, CardHeader, CardTitle } from "./ui/card";
 import { userProfile, socialLinks } from "@/lib/data.tsx";
 import Link from "next/link";
@@ -56,6 +56,11 @@ export function Contact() {
     }
   }, [state, toast]);
 
+  const displaySocials = [
+    { name: "LinkedIn", url: "https://www.linkedin.com/in/piyush-patil-867a30250", icon: <Linkedin className="h-6 w-6" /> },
+    { name: "GitHub", url: "https://github.com/Piyush0930", icon: <Github className="h-6 w-6" /> },
+  ];
+
   return (
     <section id="contact" className="py-20 relative z-20">
       <div className="text-center mb-8">
@@ -86,7 +91,7 @@ export function Contact() {
                 <span>{userProfile.location}</span>
               </div>
               <div className="flex items-center gap-4 pt-4 border-t border-border">
-                {socialLinks.map((profile) => {
+                {displaySocials.map((profile) => {
                   return (
                     <Link
                       key={profile.name}
@@ -95,9 +100,7 @@ export function Contact() {
                       rel="noopener noreferrer"
                     >
                       <Button variant="outline" size="icon">
-                        <div className="h-6 w-6">
-                          {profile.icon}
-                        </div>
+                        {profile.icon}
                       </Button>
                     </Link>
                   );
