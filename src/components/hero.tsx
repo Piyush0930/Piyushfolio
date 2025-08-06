@@ -1,6 +1,6 @@
 "use client";
 
-import { socialLinks, userProfile } from "@/lib/data";
+import { socialLinks, userProfile } from "@/lib/data.tsx";
 import React from "react";
 import { Button } from "./ui/button";
 import { Download, Linkedin, Github } from "lucide-react";

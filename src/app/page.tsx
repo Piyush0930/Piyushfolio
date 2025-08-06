@@ -6,7 +6,7 @@ import { Experience } from "@/components/experience";
 import { Education } from "@/components/education";
 import { Contact } from "@/components/contact";
 import { Footer } from "@/components/footer";
-import { navItems, socialLinks } from "@/lib/data";
+import { navItems, socialLinks } from "@/lib/data.tsx";
 
 export default function Home() {
   return (

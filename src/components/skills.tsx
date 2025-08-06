@@ -1,5 +1,5 @@
 import React from 'react';
-import { skills } from '@/lib/data';
+import { skills } from '@/lib/data.tsx';
 import { Badge } from './ui/badge';
 import {
   Code,

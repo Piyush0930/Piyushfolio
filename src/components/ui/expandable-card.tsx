@@ -3,14 +3,14 @@
 import React, { useEffect, useId, useRef, useState } from "react";
 import { AnimatePresence, motion } from "framer-motion";
 import { useOutsideClick } from "@/hooks/use-outside-click";
-import type { Project, Experience, Education } from "@/lib/data";
+import type { Project, Experience, Education } from "@/lib/data.tsx";
 import { Button } from "./button";
 import Link from "next/link";
 import { ExternalLink, Github } from "lucide-react";
 
 type CardData = (Project | Experience | Education) & {
     src: string;
-    content: () => React.ReactNode;
+    content: React.ReactNode;
 };
 
 
@@ -126,7 +126,7 @@ export function ExpandableCardList({ items }: { items: CardData[] }) {
                     exit={{ opacity: 0 }}
                     className="text-muted-foreground text-xs md:text-sm lg:text-base h-40 md:h-fit pb-10 flex flex-col items-start gap-4 overflow-auto [mask:linear-gradient(to_bottom,white,white,transparent)] [scrollbar-width:none] [-ms-overflow-style:none] [-webkit-overflow-scrolling:touch]"
                   >
-                    {active.content()}
+                    {active.content}
                   </motion.div>
                 </div>
               </div>

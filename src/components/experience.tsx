@@ -1,5 +1,5 @@
 import React from "react";
-import { experiences } from "@/lib/data";
+import { experiences } from "@/lib/data.tsx";
 import { ExpandableCardList } from "./ui/expandable-card";
 
 export const Experience = () => {

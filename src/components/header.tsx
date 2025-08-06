@@ -5,7 +5,7 @@ import Link from "next/link";
 import { Button } from "./ui/button";
 import { Sheet, SheetContent, SheetTrigger } from "./ui/sheet";
 import { Menu, Code } from "lucide-react";
-import type { NavItem } from "@/lib/data";
+import type { NavItem } from "@/lib/data.tsx";
 
 export function Header({ navItems }: { navItems: NavItem[] }) {
   return (

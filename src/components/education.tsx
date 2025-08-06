@@ -1,5 +1,5 @@
 import React from 'react';
-import { education } from '@/lib/data';
+import { education } from '@/lib/data.tsx';
 import { ExpandableCardList } from './ui/expandable-card';
 
 

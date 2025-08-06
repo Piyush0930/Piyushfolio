@@ -1,5 +1,5 @@
 import React from "react";
-import { projects } from "@/lib/data";
+import { projects } from "@/lib/data.tsx";
 import { ExpandableCardList } from "./ui/expandable-card";
 
 export const Projects = () => {

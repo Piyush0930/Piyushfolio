@@ -1,7 +1,7 @@
 import React from "react";
 import { Button } from "./ui/button";
 import Link from "next/link";
-import type { SocialLink } from "@/lib/data";
+import type { SocialLink } from "@/lib/data.tsx";
 import { Linkedin, Github } from "lucide-react";
 
 const iconMap: { [key: string]: React.ElementType } = {

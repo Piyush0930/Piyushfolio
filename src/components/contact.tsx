@@ -10,7 +10,7 @@ import { Label } from "./ui/label";
 import { useToast } from "@/hooks/use-toast";
 import { MoveUpRight, Mail, Phone, MapPin, Linkedin, Github } from "lucide-react";
 import { Card, CardContent, CardHeader, CardTitle } from "./ui/card";
-import { userProfile, socialLinks } from "@/lib/data";
+import { userProfile, socialLinks } from "@/lib/data.tsx";
 import Link from "next/link";
 
 const initialState = {

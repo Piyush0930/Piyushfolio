@@ -4,7 +4,7 @@ import { z } from "zod";
 import { db } from "@/lib/firebase";
 import { collection, addDoc, serverTimestamp } from "firebase/firestore";
 import { Resend } from "resend";
-import { userProfile } from "@/lib/data";
+import { userProfile } from "@/lib/data.tsx";
 
 const contactSchema = z.object({
   name: z.string().min(2, "Name must be at least 2 characters."),
