@@ -134,49 +134,47 @@ export function ExpandableCardList({ items }: { items: CardData[] }) {
           </div>
         ) : null}
       </AnimatePresence>
-      <ul className="max-w-4xl mx-auto w-full gap-4 flex flex-col">
+      <ul className="max-w-7xl mx-auto w-full grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
         {items.map((card) => {
             const cardTitle = 'title' in card ? card.title : card.degree;
             const cardDescription = 'description' in card ? card.description : ('company' in card ? card.company : card.institution);
             return (
-                <motion.div
+                <motion.li
                     layoutId={`card-${cardTitle}-${id}`}
                     key={`card-${cardTitle}-${id}`}
                     onClick={() => setActive(card)}
-                    className="p-4 flex flex-col md:flex-row justify-between items-center bg-card hover:bg-card/90 rounded-xl cursor-pointer"
+                    className="p-4 flex flex-col items-center text-center bg-card hover:bg-card/90 rounded-xl cursor-pointer"
                 >
-                    <div className="flex gap-4 flex-col md:flex-row items-center">
                     <motion.div layoutId={`image-${cardTitle}-${id}`}>
                         <img
                         width={100}
                         height={100}
                         src={card.src}
                         alt={cardTitle}
-                        className="h-20 w-20 md:h-14 md:w-14 rounded-lg object-cover"
+                        className="h-24 w-24 rounded-lg object-cover"
                         />
                     </motion.div>
-                    <div className="text-center md:text-left">
+                    <div className="mt-4">
                         <motion.h3
                         layoutId={`title-${cardTitle}-${id}`}
-                        className="font-medium text-foreground text-center md:text-left"
+                        className="font-medium text-foreground"
                         >
                         {cardTitle}
                         </motion.h3>
                         <motion.p
                         layoutId={`description-${cardDescription}-${id}`}
-                        className="text-muted-foreground text-center md:text-left"
+                        className="text-muted-foreground"
                         >
                         {cardDescription}
                         </motion.p>
                     </div>
-                    </div>
                     <motion.button
                     layoutId={`button-${cardTitle}-${id}`}
-                    className="px-4 py-2 text-sm rounded-full font-bold bg-primary/80 hover:bg-primary text-primary-foreground mt-4 md:mt-0"
+                    className="px-4 py-2 text-sm rounded-full font-bold bg-primary/80 hover:bg-primary text-primary-foreground mt-4"
                     >
                         Learn More
                     </motion.button>
-                </motion.div>
+                </motion.li>
             )
         })}
       </ul>
