@@ -6,8 +6,6 @@ import { collection, addDoc, serverTimestamp } from "firebase/firestore";
 import { Resend } from "resend";
 import { userProfile } from "@/lib/data";
 
-const resend = new Resend(process.env.RESEND_API_KEY);
-
 const contactSchema = z.object({
   name: z.string().min(2, "Name must be at least 2 characters."),
   email: z.string().email("Invalid email address."),
@@ -42,6 +40,7 @@ export async function saveMessage(prevState: any, formData: FormData) {
 
     // Send email via Resend
     if (process.env.RESEND_API_KEY) {
+      const resend = new Resend(process.env.RESEND_API_KEY);
       await resend.emails.send({
         from: 'onboarding@resend.dev',
         to: userProfile.email,
