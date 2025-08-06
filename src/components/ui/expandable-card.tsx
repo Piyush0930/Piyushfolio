@@ -8,9 +8,7 @@ import { Button } from "./button";
 import Link from "next/link";
 import { ExternalLink, Github } from "lucide-react";
 
-type CardData = (Project | Experience | Education) & {
-    content: React.ReactNode;
-};
+type CardData = (Omit<Project, 'description'> & { description: React.ReactNode }) | Experience | Education;
 
 
 export function ExpandableCardList({ items }: { items: CardData[] }) {
@@ -87,21 +85,27 @@ export function ExpandableCardList({ items }: { items: CardData[] }) {
                       {'title' in active ? active.title : active.degree}
                     </motion.h3>
                     <motion.p
-                      layoutId={`description-${'description' in active ? active.description : ('company' in active ? active.company: active.institution)}-${id}`}
+                      layoutId={`description-${'description' in active ? ('company' in active ? active.company: active.institution) : active.description}-${id}`}
                       className="text-muted-foreground"
                     >
-                      {'description' in active ? active.description : ('company' in active ? active.company: active.institution)}
+                       {'description' in active ? active.description : ('company' in active ? active.company: active.institution)}
                     </motion.p>
                   </div>
                     <div className="flex gap-2">
                         {'github' in active && active.github && (
-                            <Link href={active.github} target="_blank">
-                                <Button size="icon" variant="outline"><Github className="h-4 w-4 mr-2"/> GitHub</Button>
+                             <Link href={active.github} target="_blank" rel="noopener noreferrer">
+                                <Button variant="outline" size="sm" className="w-full">
+                                <Github className="mr-2 h-4 w-4" />
+                                GitHub
+                                </Button>
                             </Link>
                         )}
                         {'demo' in active && active.demo && (
-                            <Link href={active.demo} target="_blank">
-                                <Button size="icon"><ExternalLink className="h-4 w-4 mr-2" /> Demo</Button>
+                            <Link href={active.demo} target="_blank" rel="noopener noreferrer">
+                                <Button variant="default" size="sm" className="w-full">
+                                <ExternalLink className="mr-2 h-4 w-4" />
+                                Live Demo
+                                </Button>
                             </Link>
                         )}
                     </div>
@@ -115,7 +119,20 @@ export function ExpandableCardList({ items }: { items: CardData[] }) {
                     exit={{ opacity: 0 }}
                     className="text-muted-foreground text-xs md:text-sm lg:text-base h-40 md:h-fit pb-10 flex flex-col items-start gap-4 overflow-auto [mask:linear-gradient(to_bottom,white,white,transparent)] [scrollbar-width:none] [-ms-overflow-style:none] [-webkit-overflow-scrolling:touch]"
                   >
-                    {active.content}
+                    {'tasks' in active ? (
+                        <ul className="space-y-2">
+                            {active.tasks.map((task, i) => (
+                                <li key={i} className="flex items-start">
+                                    <span className="text-accent mr-2">✔</span>
+                                    {task}
+                                </li>
+                            ))}
+                        </ul>
+                    ) : 'details' in active ? (
+                        <p>{active.details}</p>
+                    ) : (
+                        ''
+                    )}
                   </motion.div>
                 </div>
               </div>

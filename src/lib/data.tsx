@@ -20,7 +20,6 @@ export type Experience = {
   company: string;
   period: string;
   tasks: string[];
-  content: React.ReactNode;
 };
 
 export type Education = {
@@ -28,7 +27,6 @@ export type Education = {
   institution: string;
   period: string;
   details: string;
-  content: React.ReactNode;
 };
 
 export type NavItem = {
@@ -162,7 +160,6 @@ export const experiences: Experience[] = [
         "Trained on AWS (EC2, S3, IAM) and created technical content.",
         "Contributed to AWS-based micro-projects and team tasks.",
       ],
-      content: <p>During my internship at Cloud Plus Plus Services, I gained hands-on experience with core AWS services, including EC2 for virtual servers, S3 for object storage, and IAM for managing user access. My responsibilities included creating technical documentation and tutorials to help others understand these services. I also had the opportunity to contribute to several micro-projects, where I applied my knowledge in a practical team environment.</p>
     },
     {
       title: "EY GDS Next Gen Internship",
@@ -172,7 +169,6 @@ export const experiences: Experience[] = [
         "Full Stack Web Development with MERN stack.",
         "Included mentorship, master classes, and project work.",
       ],
-      content: <p>As part of the EY GDS Next Gen Internship, I underwent intensive training in full-stack web development using the MERN (MongoDB, Express.js, React, Node.js) stack. The program included valuable mentorship from experienced professionals, master classes on industry best practices, and hands-on project work where I could apply my skills to real-world challenges.</p>
     },
 ];
 
@@ -182,20 +178,17 @@ export const education: Education[] = [
     institution: "Zeal College of Engineering, Pune",
     period: "Expected Apr 2026",
     details: "CGPA: 7.0",
-    content: <p>I am currently pursuing a Bachelor of Engineering in Information Technology at Zeal College of Engineering. My coursework has provided me with a strong foundation in computer science, software development, and data structures. I am on track to graduate in April 2026 with a projected CGPA of 7.0.</p>
   },
   {
     degree: "HSC (Higher Secondary Certificate)",
     institution: "Chhatrapati Shivaji Junior Science College, Jalgaon",
     period: "2022",
     details: "Percentage: 80.60%",
-    content: <p>I completed my Higher Secondary Certificate from Chhatrapati Shivaji Junior Science College, where I focused on science and mathematics. I achieved a score of 80.60%, which provided me with the necessary background for my engineering studies.</p>
   },
   {
     degree: "SSC (Secondary School Certificate)",
     institution: "Orion English Medium School, Jalgaon",
     period: "2020",
     details: "Percentage: 78.67%",
-    content: <p>I completed my Secondary School Certificate from Orion English Medium School, achieving a score of 78.67%. This was a crucial step in my academic journey and where I first developed an interest in technology.</p>
   },
 ];
