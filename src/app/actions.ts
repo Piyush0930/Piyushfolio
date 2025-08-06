@@ -45,6 +45,7 @@ export async function saveMessage(prevState: any, formData: FormData) {
         from: 'onboarding@resend.dev',
         to: userProfile.email,
         subject: `New message from ${name} on your portfolio`,
+        reply_to: email,
         html: `<p>You have a new message from <strong>${name}</strong> (${email}):</p>
                <p>${message}</p>`,
       });
