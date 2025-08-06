@@ -26,7 +26,7 @@ export function Header({ navItems }: { navItems: NavItem[] }) {
               <Link
                 key={item.link}
                 href={item.link}
-                className="text-sm font-medium text-muted-foreground transition-colors px-3 py-2 rounded-md hover:bg-accent hover:text-accent-foreground"
+                className="text-sm font-medium text-muted-foreground transition-colors px-3 py-2 rounded-md hover:text-primary"
               >
                 {item.name}
               </Link>
@@ -49,7 +49,7 @@ export function Header({ navItems }: { navItems: NavItem[] }) {
                   <Link
                     key={item.link}
                     href={item.link}
-                    className="flex w-full items-center py-2 px-3 rounded-md text-lg font-semibold transition-colors hover:bg-accent hover:text-accent-foreground"
+                    className="flex w-full items-center py-2 px-3 rounded-md text-lg font-semibold transition-colors hover:text-primary"
                   >
                     {item.name}
                   </Link>
