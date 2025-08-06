@@ -47,7 +47,6 @@ export function Skills() {
               </div>
             }
             icon={iconMap[item.icon]}
-            className={i < 2 ? "md:col-span-2" : ""}
           />
         ))}
       </BentoGrid>
