@@ -1,6 +1,6 @@
 import React from "react";
 import { projects } from "@/lib/data";
-import { BentoGrid, BentoGridItem } from "./ui/bento-grid";
+import { ExpandableCardList } from "./ui/expandable-card";
 
 export const Projects = () => {
   return (
@@ -11,22 +11,10 @@ export const Projects = () => {
         </h2>
         <p className="mx-auto mt-4 max-w-2xl text-muted-foreground">
           Here are some of the projects I've worked on, showcasing my
-          skills and passion for development.
+          skills and passion for development. Click on a project to learn more.
         </p>
       </div>
-      <BentoGrid className="max-w-4xl mx-auto md:grid-cols-3">
-        {projects.map((project, i) => (
-          <BentoGridItem
-            key={i}
-            title={project.title}
-            description={project.description}
-            github={project.github}
-            demo={project.demo}
-            tech={project.tech}
-            className={""}
-          />
-        ))}
-      </BentoGrid>
+      <ExpandableCardList items={projects} />
     </section>
   );
 };

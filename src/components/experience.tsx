@@ -1,37 +1,15 @@
 import React from "react";
 import { experiences } from "@/lib/data";
-import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "./ui/card";
+import { ExpandableCardList } from "./ui/expandable-card";
 
 export const Experience = () => {
   return (
     <section id="experience" className="py-16 lg:py-24">
       <div className="text-center mb-10">
         <h2 className="text-4xl lg:text-5xl font-bold font-headline">My Experience</h2>
-        <p className="text-muted-foreground mt-4">A timeline of my professional journey and contributions.</p>
+        <p className="text-muted-foreground mt-4 max-w-2xl mx-auto">A timeline of my professional journey. Click on an experience to learn more.</p>
       </div>
-
-      <div className="relative max-w-4xl mx-auto">
-        <div className="absolute left-6 top-0 w-0.5 h-full bg-border -translate-x-1/2"></div>
-        {experiences.map((exp, index) => (
-          <div key={index} className="relative pl-16 mb-12">
-            <div className="absolute left-6 top-1 -translate-x-1/2 w-4 h-4 bg-primary rounded-full border-4 border-background"></div>
-            <p className="text-sm text-muted-foreground mb-2">{exp.period}</p>
-            <Card className="bg-card/50 backdrop-blur-sm">
-              <CardHeader>
-                <CardTitle className="font-headline text-xl">{exp.title}</CardTitle>
-                <CardDescription>{exp.company}</CardDescription>
-              </CardHeader>
-              <CardContent>
-                <ul className="list-disc list-inside space-y-2 text-muted-foreground">
-                  {exp.tasks.map((task, i) => (
-                    <li key={i}>{task}</li>
-                  ))}
-                </ul>
-              </CardContent>
-            </Card>
-          </div>
-        ))}
-      </div>
+      <ExpandableCardList items={experiences} />
     </section>
   );
 };
