@@ -14,14 +14,11 @@ export const Projects = () => {
           skills and passion for development.
         </p>
       </div>
-      <div className="grid auto-rows-[22rem] grid-cols-1 gap-4 md:grid-cols-3">
+      <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
         {projects.map((project, i) => (
           <ProjectCard
             key={project.title}
             project={project}
-            className={
-              i === 0 || i === 3 ? "md:col-span-2" : ""
-            }
           />
         ))}
       </div>

@@ -16,65 +16,57 @@ export const ProjectCard = ({
   className?: string;
 }) => {
   return (
-    <div
-      className={cn(
-        "group/bento row-span-1 flex flex-col justify-between space-y-4 overflow-hidden rounded-xl border border-white/[0.2] bg-black p-4 shadow-input transition duration-200 hover:shadow-xl",
-        className
-      )}
-    >
-      <div>
-        <div className="relative h-40 w-full overflow-hidden rounded-xl">
-          <Image
-            src={project.image}
-            alt={project.title}
-            fill
-            className="object-cover transition-transform duration-500 group-hover:scale-105"
-            data-ai-hint={project.aiHint}
-          />
-        </div>
-        <div className="mt-4 font-sans font-bold text-neutral-200">
-          {project.title}
-        </div>
-        <div className="font-sans text-xs font-normal text-neutral-300">
-          {project.description}
-        </div>
+    <Card className={cn("flex flex-col overflow-hidden h-full group", className)}>
+      <div className="relative w-full h-48 overflow-hidden">
+        <Image
+          src={project.image}
+          alt={project.title}
+          fill
+          className="object-cover transition-transform duration-500 group-hover:scale-105"
+          data-ai-hint={project.aiHint}
+        />
+        <div className="absolute inset-0 bg-black/30 group-hover:bg-black/50 transition-colors duration-300" />
       </div>
-      <div className="flex items-end justify-between">
-        <div className="flex flex-wrap gap-2">
-          {project.tech.slice(0, 3).map((tech, index) => (
-            <Badge key={index} variant="secondary" className="text-xs">
+      <CardHeader>
+        <CardTitle className="font-headline text-xl">{project.title}</CardTitle>
+      </CardHeader>
+      <CardContent className="flex flex-col flex-grow">
+        <p className="text-muted-foreground text-sm mb-4 flex-grow">
+          {project.description}
+        </p>
+        <div className="flex flex-wrap gap-2 mb-4">
+          {project.tech.slice(0, 5).map((tech, index) => (
+            <Badge key={index} variant="secondary">
               {tech}
             </Badge>
           ))}
-          {project.tech.length > 3 && (
-            <Badge variant="secondary" className="text-xs">
-              +{project.tech.length - 3}
-            </Badge>
+          {project.tech.length > 5 && (
+            <Badge variant="secondary">+{project.tech.length - 5} more</Badge>
           )}
         </div>
-        <div className="flex gap-2">
+        <div className="mt-auto flex gap-2">
           {project.github && (
             <Link
               href={project.github}
               target="_blank"
               rel="noopener noreferrer"
-              className="rounded-full border border-white/[0.2] p-2 hover:bg-white/[0.1]"
             >
-              <Github className="h-4 w-4" />
+              <Button variant="outline" size="sm">
+                <Github className="mr-2 h-4 w-4" />
+                GitHub
+              </Button>
             </Link>
           )}
           {project.demo && (
-            <Link
-              href={project.demo}
-              target="_blank"
-              rel="noopener noreferrer"
-              className="rounded-full border border-white/[0.2] p-2 hover:bg-white/[0.1]"
-            >
-              <ExternalLink className="h-4 w-4" />
+            <Link href={project.demo} target="_blank" rel="noopener noreferrer">
+              <Button variant="default" size="sm">
+                <ExternalLink className="mr-2 h-4 w-4" />
+                Demo
+              </Button>
             </Link>
           )}
         </div>
-      </div>
-    </div>
+      </CardContent>
+    </Card>
   );
 };
