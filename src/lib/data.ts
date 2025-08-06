@@ -45,7 +45,7 @@ export type SocialLink = {
 export const userProfile = {
   name: "Piyush Patil",
   title: "MERN STACK(NEXTJS) | DEVOPS | DATA ENGINEER | DATA ANALYSIS | GENAI | MACHINE LEARNING",
-  intro: "I’m an IT Engineering student skilled in building modern web applications, CI/CD pipelines, cloud-native deployments, and scalable data engineering workflows. I specialize in MERN stack, DevOps tools, and Azure-based ETL solutions, with experience in integrating Generative AI for enhanced automation and user experiences.",
+  intro: "A versatile IT Engineering student passionate about building intelligent, scalable solutions. I have hands-on experience developing full-stack applications with the MERN stack and Next.js, and a strong command of DevOps practices for automating CI/CD pipelines. My skills extend to data engineering, where I build ETL workflows, and I leverage data analysis and machine learning to extract insights. I am also proficient in integrating Generative AI to create innovative, automated, and data-driven user experiences.",
   email: "piyushpatil922004@gmail.com",
   phone: "7057241350",
   location: "India",
