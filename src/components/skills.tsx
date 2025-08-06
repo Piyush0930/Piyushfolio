@@ -32,7 +32,7 @@ export function Skills() {
           A collection of technologies and tools I'm proficient in.
         </p>
       </div>
-      <BentoGrid className="max-w-4xl mx-auto">
+      <BentoGrid className="max-w-4xl mx-auto md:grid-cols-4">
         {skills.map((item, i) => (
           <BentoGridItem
             key={i}
@@ -47,7 +47,7 @@ export function Skills() {
               </div>
             }
             icon={iconMap[item.icon]}
-            className={i === 0 || i === 4 || i === 7 ? "md:col-span-2" : ""}
+            className={i < 2 ? "md:col-span-2" : ""}
           />
         ))}
       </BentoGrid>
