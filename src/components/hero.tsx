@@ -1,18 +1,10 @@
 "use client";
 
-import { personalizeBio } from "@/ai/flows/personalize-bio";
 import { socialLinks, userProfile } from "@/lib/data";
 import { cn } from "@/lib/utils";
-import React, { useState, useTransition } from "react";
+import React from "react";
 import { Button } from "./ui/button";
-import {
-  Select,
-  SelectContent,
-  SelectItem,
-  SelectTrigger,
-  SelectValue,
-} from "./ui/select";
-import { Sparkles, Download, Linkedin, Github } from "lucide-react";
+import { Download, Linkedin, Github } from "lucide-react";
 import Link from "next/link";
 import { TextGenerateEffect } from "./ui/text-generate-effect";
 
@@ -22,24 +14,6 @@ const iconMap: { [key: string]: React.ElementType } = {
 };
 
 export function Hero() {
-  const [tone, setTone] = useState("Professional");
-  const [personalizedBio, setPersonalizedBio] = useState(userProfile.intro);
-  const [isPending, startTransition] = useTransition();
-
-  const handlePersonalize = () => {
-    startTransition(async () => {
-      try {
-        const result = await personalizeBio({
-          bio: userProfile.intro,
-          tone: tone,
-        });
-        setPersonalizedBio(result.personalizedBio);
-      } catch (error) {
-        console.error("Failed to personalize bio:", error);
-      }
-    });
-  };
-
   return (
     <section id="home" className="relative min-h-screen flex items-center justify-center">
       <div className="absolute pointer-events-none inset-0 flex items-center justify-center dark:bg-black bg-white [mask-image:radial-gradient(ellipse_at_center,transparent_20%,black)]"></div>
@@ -53,24 +27,8 @@ export function Hero() {
 
         <div className="mt-8 max-w-3xl mx-auto">
           <p className="text-muted-foreground leading-relaxed">
-            {isPending ? "Generating..." : personalizedBio}
+            {userProfile.intro}
           </p>
-          <div className="mt-6 flex flex-col sm:flex-row items-center justify-center gap-4">
-            <Select onValueChange={setTone} defaultValue={tone}>
-              <SelectTrigger className="w-full sm:w-[180px]">
-                <SelectValue placeholder="Select Tone" />
-              </SelectTrigger>
-              <SelectContent>
-                <SelectItem value="Professional">Professional</SelectItem>
-                <SelectItem value="Casual">Casual</SelectItem>
-                <SelectItem value="Friendly">Friendly</SelectItem>
-              </SelectContent>
-            </Select>
-            <Button onClick={handlePersonalize} disabled={isPending} className="w-full sm:w-auto">
-              <Sparkles className="mr-2 h-4 w-4" />
-              Personalize with AI
-            </Button>
-          </div>
         </div>
 
         <div className="mt-10 flex flex-wrap justify-center gap-4">
