@@ -17,9 +17,12 @@ export function Hero() {
   return (
     <section id="home" className="py-20 lg:py-32">
        <BackgroundBeamsWithCollision className="absolute top-0 left-0 w-full h-full z-0" />
-      <div className="relative z-10 text-center my-20">
+      <div className="relative z-10 text-center mt-10 mb-20">
         <div className="max-w-[89vw] md:max-w-2xl lg:max-w-[60vw] flex flex-col items-center justify-center mx-auto">
-          <TextGenerateEffect words={userProfile.name} className="text-center text-[40px] md:text-5xl lg:text-6xl" />
+          <TextGenerateEffect
+            words={userProfile.name}
+            className="text-center text-[40px] md:text-5xl lg:text-6xl"
+          />
           
           <h2 className="uppercase tracking-widest text-xs text-center text-blue-100 max-w-80">
             Dynamic Web Magic with Next.js
