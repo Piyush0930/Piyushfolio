@@ -31,7 +31,6 @@ export const Projects = () => {
                 data-ai-hint={`${project.title.split(' ')[0].toLowerCase()}`}
               />
             }
-            className={i === 2 || i === 5 ? "md:col-span-2" : ""}
             github={project.github}
             demo={project.demo}
             tech={project.tech}
