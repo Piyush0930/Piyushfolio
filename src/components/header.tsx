@@ -5,7 +5,7 @@ import React from "react";
 import Link from "next/link";
 import { Button } from "./ui/button";
 import { Sheet, SheetContent, SheetTrigger } from "./ui/sheet";
-import { Menu, Mountain } from "lucide-react";
+import { Menu, Code } from "lucide-react";
 import { ThemeToggle } from "./theme-toggle";
 import type { NavItem } from "@/lib/data";
 
@@ -15,7 +15,7 @@ export function Header({ navItems }: { navItems: NavItem[] }) {
       <div className="container flex h-14 max-w-screen-2xl items-center">
         <div className="flex items-center flex-1">
           <Link href="/" className="mr-6 flex items-center space-x-2">
-            <Mountain className="h-6 w-6" />
+            <Code className="h-6 w-6" />
             <span className="font-bold">Piyush Patil</span>
           </Link>
         </div>
