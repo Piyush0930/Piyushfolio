@@ -1,4 +1,11 @@
 import React from "react";
+import {
+  IconBrandGithub,
+  IconBrandInstagram,
+  IconMail,
+  IconMapPin,
+  IconBrandLinkedin,
+} from "@tabler/icons-react";
 
 export type Project = {
   title: string;
@@ -16,7 +23,7 @@ export type SkillCategory = {
 };
 
 export type Experience = {
-  title:string;
+  title: string;
   company: string;
   period: string;
   tasks: string[];
@@ -37,21 +44,46 @@ export type NavItem = {
 export type SocialLink = {
   name: string;
   url: string;
-  icon: string;
+  icon: React.ReactNode;
 };
 
 export const userProfile = {
   name: "Piyush Patil",
-  title: "MERN STACK(NEXTJS) | DEVOPS | DATA ENGINEER | DATA ANALYSIS | GENAI | MACHINE LEARNING",
-  intro: "A versatile IT Engineering student passionate about building intelligent, scalable solutions. I have hands-on experience developing full-stack applications with the MERN stack and Next.js, and a strong command of DevOps practices for automating CI/CD pipelines. My skills extend to data engineering, where I build ETL workflows, and I leverage data analysis and machine learning to extract insights. I am also proficient in integrating Generative AI to create innovative, automated, and data-driven user experiences.",
+  title:
+    "MERN STACK(NEXTJS) | DEVOPS | DATA ENGINEER | DATA ANALYSIS | GENAI | MACHINE LEARNING",
+  intro:
+    "A versatile IT Engineering student passionate about building intelligent, scalable solutions. I have hands-on experience developing full-stack applications with the MERN stack and Next.js, and a strong command of DevOps practices for automating CI/CD pipelines. My skills extend to data engineering, where I build ETL workflows, and I leverage data analysis and machine learning to extract insights. I am also proficient in integrating Generative AI to create innovative, automated, and data-driven user experiences.",
   email: "piyushpatil922004@gmail.com",
   phone: "7057241350",
   location: "India",
 };
 
 export const socialLinks: SocialLink[] = [
-  { name: "LinkedIn", url: "https://www.linkedin.com/in/piyush-patil-867a30250", icon: "Linkedin" },
-  { name: "GitHub", url: "https://github.com/Piyush0930", icon: "Github" },
+  {
+    name: "LinkedIn",
+    url: "https://www.linkedin.com/in/piyush-patil-867a30250",
+    icon: <IconBrandLinkedin className="h-full w-full text-neutral-500 dark:text-neutral-300" />,
+  },
+  {
+    name: "GitHub",
+    url: "https://github.com/Piyush0930",
+    icon: <IconBrandGithub className="h-full w-full text-neutral-500 dark:text-neutral-300" />,
+  },
+  {
+    name: "Email",
+    url: "mailto:piyushpatil922004@gmail.com",
+    icon: <IconMail className="h-full w-full text-neutral-500 dark:text-neutral-300" />,
+  },
+  {
+    name: "Location",
+    url: "#",
+    icon: <IconMapPin className="h-full w-full text-neutral-500 dark:text-neutral-300" />,
+  },
+  {
+    name: "Instagram",
+    url: "https://www.instagram.com",
+    icon: <IconBrandInstagram className="h-full w-full text-neutral-500 dark:text-neutral-300" />,
+  },
 ];
 
 export const navItems: NavItem[] = [
@@ -71,32 +103,74 @@ export const skills: SkillCategory[] = [
   },
   {
     category: "Frontend",
-    technologies: ["React.js", "Next.js", "Redux", "Tailwind CSS", "HTML5", "CSS3"],
+    technologies: [
+      "React.js",
+      "Next.js",
+      "Redux",
+      "Tailwind CSS",
+      "HTML5",
+      "CSS3",
+    ],
     icon: "Laptop",
   },
   {
     category: "Backend",
-    technologies: ["Node.js", "Express.js", "RESTful APIs", "JWT Authentication", "Firebase"],
+    technologies: [
+      "Node.js",
+      "Express.js",
+      "RESTful APIs",
+      "JWT Authentication",
+      "Firebase",
+    ],
     icon: "Cpu",
   },
   {
     category: "Databases",
-    technologies: ["MongoDB", "MongoDB Atlas", "MySQL", "Mongoose", "Firebase Firestore", "Azure SQL Database"],
+    technologies: [
+      "MongoDB",
+      "MongoDB Atlas",
+      "MySQL",
+      "Mongoose",
+      "Firebase Firestore",
+      "Azure SQL Database",
+    ],
     icon: "Database",
   },
   {
     category: "DevOps & Cloud",
-    technologies: ["Git", "GitHub", "Docker", "Jenkins", "Kubernetes", "Ansible", "Terraform", "AWS", "Microsoft Azure"],
+    technologies: [
+      "Git",
+      "GitHub",
+      "Docker",
+      "Jenkins",
+      "Kubernetes",
+      "Ansible",
+      "Terraform",
+      "AWS",
+      "Microsoft Azure",
+    ],
     icon: "Cloud",
   },
   {
     category: "Big Data & ETL",
-    technologies: ["Apache Spark", "PySpark", "Azure Data Factory", "Azure Synapse Analytics", "Azure Databricks"],
+    technologies: [
+      "Apache Spark",
+      "PySpark",
+      "Azure Data Factory",
+      "Azure Synapse Analytics",
+      "Azure Databricks",
+    ],
     icon: "BarChart2",
   },
   {
     category: "GenAI & Automation",
-    technologies: ["AI API Integration", "OpenAI", "LangChain", "Chatbots", "Content Generation"],
+    technologies: [
+      "AI API Integration",
+      "OpenAI",
+      "LangChain",
+      "Chatbots",
+      "Content Generation",
+    ],
     icon: "Bot",
   },
   {
@@ -109,7 +183,16 @@ export const skills: SkillCategory[] = [
 export const projects: Project[] = [
   {
     title: "Smart Property Rental Platform",
-    tech: ["MERN", "Tailwind CSS", "Jenkins", "Docker", "Kubernetes", "AWS", "Azure", "Power BI"],
+    tech: [
+      "MERN",
+      "Tailwind CSS",
+      "Jenkins",
+      "Docker",
+      "Kubernetes",
+      "AWS",
+      "Azure",
+      "Power BI",
+    ],
     description: "An Airbnb-like platform with advanced features.",
     github: "https://github.com/Piyush0930",
     demo: "#",
@@ -137,7 +220,14 @@ export const projects: Project[] = [
   },
   {
     title: "DevOps Automation Project",
-    tech: ["Terraform", "Ansible", "Jenkins", "Docker", "Kubernetes", "AWS"],
+    tech: [
+      "Terraform",
+      "Ansible",
+      "Jenkins",
+      "Docker",
+      "Kubernetes",
+      "AWS",
+    ],
     description: "An automated deployment pipeline for cloud infrastructure.",
     github: "https://github.com/Piyush0930",
     demo: "#",
@@ -152,24 +242,24 @@ export const projects: Project[] = [
 ];
 
 export const experiences: Experience[] = [
-    {
-      title: "Cloud & Technical Content Intern",
-      company: "Cloud Plus Plus Services, Pune",
-      period: "Apr 2024 – Jul 2024",
-      tasks: [
-        "Trained on AWS (EC2, S3, IAM) and created technical content.",
-        "Contributed to AWS-based micro-projects and team tasks.",
-      ],
-    },
-    {
-      title: "EY GDS Next Gen Internship",
-      company: "EY",
-      period: "Feb 2025 – Mar 2025",
-      tasks: [
-        "Full Stack Web Development with MERN stack.",
-        "Included mentorship, master classes, and project work.",
-      ],
-    },
+  {
+    title: "Cloud & Technical Content Intern",
+    company: "Cloud Plus Plus Services, Pune",
+    period: "Apr 2024 – Jul 2024",
+    tasks: [
+      "Trained on AWS (EC2, S3, IAM) and created technical content.",
+      "Contributed to AWS-based micro-projects and team tasks.",
+    ],
+  },
+  {
+    title: "EY GDS Next Gen Internship",
+    company: "EY",
+    period: "Feb 2025 – Mar 2025",
+    tasks: [
+      "Full Stack Web Development with MERN stack.",
+      "Included mentorship, master classes, and project work.",
+    ],
+  },
 ];
 
 export const education: Education[] = [

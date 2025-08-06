@@ -1,22 +1,23 @@
+
 "use client";
 
 import { socialLinks, userProfile } from "@/lib/data.tsx";
 import React from "react";
 import { Button } from "./ui/button";
-import { Download, Linkedin, Github } from "lucide-react";
-import Link from "next/link";
+import { Download } from "lucide-react";
 import { TextGenerateEffect } from "./ui/text-generate-effect";
 import { BackgroundBeamsWithCollision } from "./ui/background-beams-with-collision";
-
-const iconMap: { [key: string]: React.ElementType } = {
-  Linkedin,
-  Github,
-};
+import { FloatingDock } from "./ui/floating-dock";
 
 export function Hero() {
+  const dockItems = socialLinks.map(link => ({
+    title: link.name,
+    icon: link.icon,
+    href: link.url
+  }));
   return (
     <section id="home" className="py-8">
-       <BackgroundBeamsWithCollision className="absolute top-0 left-0 w-full h-full z-0" />
+      <BackgroundBeamsWithCollision className="absolute top-0 left-0 w-full h-full z-0" />
       <div className="relative z-10 text-center mt-20 mb-16">
         <div className="max-w-[89vw] md:max-w-2xl lg:max-w-[60vw] flex flex-col items-center justify-center mx-auto">
           <TextGenerateEffect
@@ -35,7 +36,7 @@ export function Hero() {
           </p>
         </div>
 
-        <div className="mt-10 flex flex-wrap justify-center gap-4">
+        <div className="mt-10 flex flex-col items-center gap-8">
           <a
             href="/Piyush_Patil_Resume.pdf"
             download
@@ -45,17 +46,7 @@ export function Hero() {
               Download Resume
             </Button>
           </a>
-          {socialLinks.map((social) => {
-            const Icon = iconMap[social.icon as string];
-            return Icon ? (
-              <Link key={social.name} href={social.url} target="_blank" rel="noopener noreferrer">
-                <Button variant="outline" size="icon">
-                  <Icon className="h-5 w-5" />
-                  <span className="sr-only">{social.name}</span>
-                </Button>
-              </Link>
-            ) : null
-          })}
+          <FloatingDock items={dockItems} />
         </div>
       </div>
     </section>

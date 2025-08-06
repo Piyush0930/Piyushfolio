@@ -8,7 +8,7 @@ import { Input } from "./ui/input";
 import { Textarea } from "./ui/textarea";
 import { Label } from "./ui/label";
 import { useToast } from "@/hooks/use-toast";
-import { MoveUpRight, Mail, Phone, MapPin, Linkedin, Github } from "lucide-react";
+import { MoveUpRight, Mail, Phone, MapPin } from "lucide-react";
 import { Card, CardContent, CardHeader, CardTitle } from "./ui/card";
 import { userProfile, socialLinks } from "@/lib/data.tsx";
 import Link from "next/link";
@@ -28,11 +28,6 @@ function SubmitButton() {
     </Button>
   );
 }
-
-const iconMap: { [key: string]: React.ElementType } = {
-  Linkedin,
-  Github,
-};
 
 export function Contact() {
   const [state, setState] = useState(initialState);
@@ -92,8 +87,7 @@ export function Contact() {
               </div>
               <div className="flex items-center gap-4 pt-4 border-t border-border">
                 {socialLinks.map((profile) => {
-                  const Icon = iconMap[profile.icon as string];
-                  return Icon ? (
+                  return (
                     <Link
                       key={profile.name}
                       href={profile.url}
@@ -101,10 +95,12 @@ export function Contact() {
                       rel="noopener noreferrer"
                     >
                       <Button variant="outline" size="icon">
-                        <Icon className="h-6 w-6" />
+                        <div className="h-6 w-6">
+                          {profile.icon}
+                        </div>
                       </Button>
                     </Link>
-                  ) : null;
+                  );
                 })}
               </div>
             </CardContent>
