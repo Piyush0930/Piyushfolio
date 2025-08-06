@@ -1,7 +1,6 @@
 import React from "react";
 import { projects } from "@/lib/data";
 import { BentoGrid, BentoGridItem } from "./ui/bento-grid";
-import Image from "next/image";
 
 export const Projects = () => {
   return (
@@ -15,25 +14,16 @@ export const Projects = () => {
           skills and passion for development.
         </p>
       </div>
-      <BentoGrid className="max-w-4xl mx-auto">
+      <BentoGrid className="max-w-4xl mx-auto md:grid-cols-3">
         {projects.map((project, i) => (
           <BentoGridItem
             key={i}
             title={project.title}
             description={project.description}
-            header={
-              <Image
-                src={project.image}
-                alt={project.title}
-                width={400}
-                height={200}
-                className="flex-1 w-full h-full object-cover rounded-xl"
-                data-ai-hint={`${project.title.split(' ')[0].toLowerCase()}`}
-              />
-            }
             github={project.github}
             demo={project.demo}
             tech={project.tech}
+            className={""}
           />
         ))}
       </BentoGrid>
