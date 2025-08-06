@@ -53,8 +53,8 @@ export function Contact() {
   }, [state, toast]);
 
   return (
-    <section id="contact" className="py-20 lg:py-32">
-      <div className="text-center mb-8">
+    <section id="contact" className="py-16 lg:py-24">
+      <div className="text-center mb-10">
         <h2 className="text-4xl lg:text-5xl font-bold font-headline">Get In Touch</h2>
         <p className="text-muted-foreground mt-4 max-w-2xl mx-auto">
           Have a question or want to work together? Feel free to reach out.

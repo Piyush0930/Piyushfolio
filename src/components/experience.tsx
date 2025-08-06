@@ -4,8 +4,8 @@ import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "./ui/
 
 export const Experience = () => {
   return (
-    <section id="experience" className="py-20 lg:py-32">
-      <div className="text-center mb-12">
+    <section id="experience" className="py-16 lg:py-24">
+      <div className="text-center mb-10">
         <h2 className="text-4xl lg:text-5xl font-bold font-headline">My Experience</h2>
         <p className="text-muted-foreground mt-4">A timeline of my professional journey and contributions.</p>
       </div>

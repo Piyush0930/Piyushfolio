@@ -4,8 +4,8 @@ import { ProjectCard } from "./project-card";
 
 export const Projects = () => {
   return (
-    <section id="projects" className="py-20 lg:py-32">
-      <div className="mb-12 text-center">
+    <section id="projects" className="py-16 lg:py-24">
+      <div className="mb-10 text-center">
         <h2 className="font-headline text-4xl font-bold lg:text-5xl">
           My <span className="text-accent">Projects</span>
         </h2>
