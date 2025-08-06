@@ -8,6 +8,7 @@ export type Project = {
   aiHint: string;
   github?: string;
   demo?: string;
+  link?: string;
 };
 
 export type SkillCategory = {

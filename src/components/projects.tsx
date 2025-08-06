@@ -1,6 +1,6 @@
 import React from "react";
 import { projects } from "@/lib/data";
-import { ProjectCard } from "./project-card";
+import { HoverEffect } from "./ui/card-hover-effect";
 
 export const Projects = () => {
   return (
@@ -14,13 +14,8 @@ export const Projects = () => {
           skills and passion for development.
         </p>
       </div>
-      <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-        {projects.map((project, i) => (
-          <ProjectCard
-            key={project.title}
-            project={project}
-          />
-        ))}
+      <div className="max-w-5xl mx-auto px-8">
+        <HoverEffect items={projects.map(p => ({...p, link: p.demo || p.github || '#'}))} />
       </div>
     </section>
   );
