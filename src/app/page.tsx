@@ -1,4 +1,4 @@
-import { FloatingNav } from "@/components/floating-nav";
+import { Header } from "@/components/header";
 import { Hero } from "@/components/hero";
 import { Skills } from "@/components/skills";
 import { Projects } from "@/components/projects";
@@ -11,7 +11,7 @@ export default function Home() {
   return (
     <main className="relative bg-background flex justify-center items-center flex-col overflow-clip mx-auto sm:px-10 px-5">
       <div className="max-w-7xl w-full">
-        <FloatingNav navItems={navItems} />
+        <Header navItems={navItems} />
         <Hero />
         <Skills />
         <Projects />
