@@ -28,20 +28,16 @@ export const BentoGridItem = ({
   className,
   title,
   description,
-  header,
-  icon,
+  tech,
   github,
   demo,
-  tech,
 }: {
   className?: string;
   title?: string | React.ReactNode;
   description?: string | React.ReactNode;
-  header?: React.ReactNode;
-  icon?: React.ReactNode;
+  tech?: string[];
   github?: string;
   demo?: string;
-  tech?: string[];
 }) => {
   return (
     <div
@@ -50,45 +46,45 @@ export const BentoGridItem = ({
         className
       )}
     >
-      <div className="group-hover/bento:translate-x-2 transition duration-200 flex-grow flex flex-col justify-end">
-        {icon}
-        <div className="font-sans font-bold text-neutral-600 dark:text-neutral-200 mb-2 mt-2">
-          {title}
+      <div className="group-hover/bento:translate-x-2 transition duration-200 flex-grow flex flex-col justify-between">
+        <div>
+          <div className="font-sans font-bold text-neutral-600 dark:text-neutral-200 mb-2 mt-2">
+            {title}
+          </div>
+          <div className="font-sans font-normal text-neutral-600 text-xs dark:text-neutral-300">
+            {description}
+          </div>
         </div>
-        <div className="font-sans font-normal text-neutral-600 text-xs dark:text-neutral-300 mb-4">
-          {description}
-        </div>
-         <div className="flex flex-wrap gap-2 mb-4">
-          {tech?.slice(0, 3).map((techItem, index) => (
-            <Badge key={index} variant="secondary">
-              {techItem}
-            </Badge>
-          ))}
-          {tech && tech.length > 3 && (
-            <Badge variant="secondary">+{tech.length - 3} more</Badge>
-          )}
-        </div>
-        <div className="flex gap-2 mt-auto">
-          {github && (
-            <Link
-              href={github}
-              target="_blank"
-              rel="noopener noreferrer"
-            >
-              <Button variant="outline" size="sm">
-                <Github className="mr-2 h-4 w-4" />
-                GitHub
-              </Button>
-            </Link>
-          )}
-          {demo && (
-            <Link href={demo} target="_blank" rel="noopener noreferrer">
-              <Button variant="default" size="sm">
-                <ExternalLink className="mr-2 h-4 w-4" />
-                Demo
-              </Button>
-            </Link>
-          )}
+        <div>
+          <div className="flex flex-wrap gap-2 my-4">
+            {tech?.map((techItem, index) => (
+              <Badge key={index} variant="secondary">
+                {techItem}
+              </Badge>
+            ))}
+          </div>
+          <div className="flex gap-2 mt-auto">
+            {github && (
+              <Link
+                href={github}
+                target="_blank"
+                rel="noopener noreferrer"
+              >
+                <Button variant="outline" size="sm" className="w-full">
+                  <Github className="mr-2 h-4 w-4" />
+                  GitHub
+                </Button>
+              </Link>
+            )}
+            {demo && (
+              <Link href={demo} target="_blank" rel="noopener noreferrer">
+                <Button variant="default" size="sm" className="w-full">
+                  <ExternalLink className="mr-2 h-4 w-4" />
+                  Live Demo
+                </Button>
+              </Link>
+            )}
+          </div>
         </div>
       </div>
     </div>

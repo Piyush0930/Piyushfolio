@@ -7,7 +7,6 @@ export type Project = {
   github?: string;
   demo?: string;
   link?: string;
-  content: React.ReactNode;
 };
 
 export type SkillCategory = {
@@ -116,7 +115,6 @@ export const projects: Project[] = [
     description: "An Airbnb-like platform with advanced features.",
     github: "https://github.com/Piyush0930",
     demo: "#",
-    content: <p>This project is a comprehensive property rental platform similar to Airbnb. It allows users to list their properties, and renters to book them. Key features include a price prediction model to help property owners set competitive rates, a complete CI/CD pipeline for automated testing and deployment, and detailed analytics dashboards for business insights.</p>
   },
   {
     title: "Hybrid Movie Booking System",
@@ -124,7 +122,6 @@ export const projects: Project[] = [
     description: "A flexible booking system for mini-theaters.",
     github: "https://github.com/Piyush0930",
     demo: "#",
-    content: <p>A unique movie booking system that supports both online and offline ticket purchasing for a mini-theater. It features secure user authentication, real-time seat reservation, and a streamlined checkout process. The system is built with Next.js for a fast and modern user experience.</p>
   },
   {
     title: "Personal Blog Website",
@@ -132,7 +129,6 @@ export const projects: Project[] = [
     description: "A full-featured platform for creating and managing a blog.",
     github: "https://github.com/Piyush0930",
     demo: "#",
-    content: <p>This project is a complete blogging platform that provides a full dashboard for authors to create, edit, and publish their articles. It includes user authentication with NextAuth, a rich text editor for writing posts, and a responsive design for a great reading experience on any device.</p>
   },
   {
     title: "Social Travel Journey Platform",
@@ -140,7 +136,6 @@ export const projects: Project[] = [
     description: "Share your travel experiences step-by-step.",
     github: "https://github.com/Piyush0930",
     demo: "#",
-    content: <p>This platform allows users to document and share their travel journeys in real-time. Users can post updates at each step of their trip, including photos and notes. A key feature is live route tracking, which displays the user's journey on a map as they travel.</p>
   },
   {
     title: "DevOps Automation Project",
@@ -148,7 +143,6 @@ export const projects: Project[] = [
     description: "An automated deployment pipeline for cloud infrastructure.",
     github: "https://github.com/Piyush0930",
     demo: "#",
-    content: <p>This project demonstrates a fully automated deployment pipeline for cloud infrastructure using a combination of powerful DevOps tools. Terraform is used for infrastructure as code, Ansible for configuration management, and Jenkins for continuous integration and deployment. The application is containerized with Docker and orchestrated with Kubernetes on AWS.</p>
   },
   {
     title: "Data Engineering Pipeline",
@@ -156,7 +150,6 @@ export const projects: Project[] = [
     description: "An end-to-end ETL process with reporting dashboards.",
     github: "https://github.com/Piyush0930",
     demo: "#",
-    content: <p>This project showcases an end-to-end data engineering pipeline built on Microsoft Azure. Azure Data Factory is used to orchestrate the ETL (Extract, Transform, Load) process, with data transformation logic running on Azure Databricks. The processed data is then stored in Azure Synapse Analytics and visualized through interactive reporting dashboards in Power BI.</p>
   },
 ];
 
