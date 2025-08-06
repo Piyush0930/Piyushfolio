@@ -18,7 +18,7 @@ export function Hero() {
   return (
     <section id="home" className="py-20">
       <BackgroundBeamsWithCollision className="absolute top-0 left-0 w-full h-full z-0" />
-      <div className="relative z-10 text-center mt-12 mb-12">
+      <div className="relative z-10 text-center mt-12 mb-4">
         <div className="max-w-[89vw] md:max-w-2xl lg:max-w-[60vw] flex flex-col items-center justify-center mx-auto">
           <TextGenerateEffect
             words={userProfile.name}
