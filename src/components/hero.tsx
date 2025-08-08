@@ -7,7 +7,7 @@ import { Button } from "./ui/button";
 import { Download } from "lucide-react";
 import { TextGenerateEffect } from "./ui/text-generate-effect";
 import { FloatingDock } from "./ui/floating-dock";
-import { BackgroundBeams } from "./ui/background-beams";
+import { BackgroundBeamsWithCollision } from "./ui/background-beams-with-collision";
 
 export function Hero() {
   const dockItems = socialLinks.map(link => ({
@@ -16,8 +16,9 @@ export function Hero() {
     href: link.url
   }));
   return (
-    <section id="home" className="py-20 relative">
-      <div className="relative z-10 text-center mt-12 mb-2">
+    <section id="home" className="py-16 relative">
+       <BackgroundBeamsWithCollision />
+      <div className="relative z-10 text-center mt-10 mb-0">
         <div className="max-w-[89vw] md:max-w-2xl lg:max-w-[60vw] flex flex-col items-center justify-center mx-auto">
           <TextGenerateEffect
             words={userProfile.name}
@@ -48,7 +49,6 @@ export function Hero() {
           <FloatingDock items={dockItems} />
         </div>
       </div>
-      <BackgroundBeams />
     </section>
   );
 }
