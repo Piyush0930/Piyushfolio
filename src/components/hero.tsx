@@ -6,7 +6,7 @@ import React from "react";
 import { Button } from "./ui/button";
 import { Download } from "lucide-react";
 import { TextGenerateEffect } from "./ui/text-generate-effect";
-import { BackgroundBeamsWithCollision } from "./ui/background-beams-with-collision";
+import { BackgroundBeams } from "./ui/background-beams";
 import { FloatingDock } from "./ui/floating-dock";
 
 export function Hero() {
@@ -16,9 +16,9 @@ export function Hero() {
     href: link.url
   }));
   return (
-    <section id="home" className="py-20">
-      <BackgroundBeamsWithCollision className="absolute top-0 left-0 w-full h-full z-0" />
-      <div className="relative z-10 text-center mt-12 mb-4">
+    <section id="home" className="py-12">
+      <BackgroundBeams className="absolute top-0 left-0 w-full h-full z-0" />
+      <div className="relative z-10 text-center mt-12 mb-0">
         <div className="max-w-[89vw] md:max-w-2xl lg:max-w-[60vw] flex flex-col items-center justify-center mx-auto">
           <TextGenerateEffect
             words={userProfile.name}
