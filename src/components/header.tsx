@@ -4,7 +4,7 @@ import React from "react";
 import Link from "next/link";
 import { Button } from "./ui/button";
 import { Sheet, SheetContent, SheetTrigger } from "./ui/sheet";
-import { Menu, Code } from "lucide-react";
+import { Menu, CodeXml } from "lucide-react";
 import type { NavItem } from "@/lib/data.tsx";
 
 export function Header({ navItems }: { navItems: NavItem[] }) {
@@ -13,7 +13,7 @@ export function Header({ navItems }: { navItems: NavItem[] }) {
       <div className="container flex h-14 max-w-screen-2xl items-center">
         <div className="flex-1 flex items-center">
           <Link href="/" className="mr-6 flex items-center space-x-2">
-            <Code className="h-6 w-6" />
+            <CodeXml className="h-6 w-6" />
             <span className="hidden font-bold sm:inline-block">
               Piyush
             </span>
@@ -45,7 +45,7 @@ export function Header({ navItems }: { navItems: NavItem[] }) {
             <SheetContent side="right">
               <div className="grid gap-2 py-6">
                 <Link href="/" className="flex items-center space-x-2 px-3 py-2">
-                  <Code className="h-6 w-6" />
+                  <CodeXml className="h-6 w-6" />
                   <span className="font-bold">
                     Piyush
                   </span>
